@@ -17,7 +17,7 @@ import lombok.*;
 @Builder
 public class Product{
     @Id @GeneratedValue
-    private long Id;
+    private long id;
     @NotEmpty
     @Size(min = 2, max = 50)
     private String name;
