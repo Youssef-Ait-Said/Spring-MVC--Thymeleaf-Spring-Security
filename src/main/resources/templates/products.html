@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.13.1/font/bootstrap-icons.css">
+
 </head>
 <body>
-    <div>
-        <table>
+    <div class="p-3">
+        <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
@@ -20,6 +23,12 @@
                     <td th:text="${p.name}"></td>
                     <td th:text="${p.price}"></td>
                     <td th:text="${p.quantity}"></td>
+                    <td>
+                        <a class="btn btn-danger"  onclick= "return confirm('You are going to delete this product ! \nSure? ')"
+                           th:href="@{delete(id=${p.id})}">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

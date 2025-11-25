@@ -19,12 +19,12 @@ public class SpringMvcApplication {
     public CommandLineRunner start(ProductRepository productRepository) {
         return args -> {
           productRepository.save(Product.builder()
-                        .name("Pc")
+                        .name("PC")
                         .price(2500)
                         .quantity(12)
                   .build());
           productRepository.save(Product.builder()
-                        .name("Tv")
+                        .name("TV")
                         .price(3400)
                         .quantity(15)
                   .build());
