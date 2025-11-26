@@ -14,7 +14,7 @@
 <body>
     <div class="p-3" layout:fragment="content1">
         <div class="p-3">
-            <a class="btn btn-dark" style="background-color: salmon" th:href="@{/newProduct}">
+            <a class="btn btn-dark" style="background-color: salmon" th:href="@{/admin/newProduct}">
                 New Product
             </a>
         </div>
@@ -34,7 +34,7 @@
                     <td th:text="${p.quantity}"></td>
                     <td>
                         <a class="btn btn-danger"  onclick= "return confirm('You are going to delete this product ! \nSure? ')"
-                           th:href="@{delete(id=${p.id})}">
+                           th:href="@{/admin/delete(id=${p.id})}">
                             <i class="bi bi-trash"></i>
                         </a>
                     </td>
