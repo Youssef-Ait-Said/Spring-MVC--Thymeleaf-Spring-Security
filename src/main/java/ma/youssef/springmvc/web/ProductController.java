@@ -1,12 +1,15 @@
 package ma.youssef.springmvc.web;
 
+import jakarta.validation.Valid;
 import ma.youssef.springmvc.entities.Product;
 import ma.youssef.springmvc.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -39,4 +42,11 @@ public class ProductController {
         model.addAttribute("product", new Product());
         return "newProduct";
     };
+
+    @PostMapping("/saveProduct")
+    public String saveProduct(@Valid Product product, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()) return "newProduct";
+        productRepository.save(product);
+        return "redirect:/index";
+    }
 }
