@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+    <!-- Bootstrap Icons CSS ✅ (ajouté pour éviter erreurs layout) -->
+    <link rel="stylesheet" href="webjars/bootstrap-icons/1.13.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<div class="pt-3">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="col-md-6">
+            <div class="card border-0 shadow rounded-4"> <!-- border-0 si tu veux pas de border sur la carte -->
+                <div class="card-header text-center fw-semibold fs-4 py-2"
+                     style="background:#FA8072; color:white;">
+                    <i class="bi bi-person-lock me-2"></i> Authentification
+                </div>
+
+                <div class="card-body">
+                    <form method="post" th:action="@{/login}">
+                        <div class="mb-3">
+                            <label class="form-label text-success fw-bold">Username</label>
+                            <input type="text" name="username" class="form-control rounded-3">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-success fw-bold">Password</label>
+                            <input type="password" name="password" class="form-control rounded-3">
+                        </div>
+
+                        <!-- Bouton centré ✅ -->
+                        <div class="text-center mt-3">
+                            <button type="submit"
+                                    class="btn fw-semibold px-4 py-2 shadow-sm"
+                                    style="background:#FA8072;color:white;border:none;border-radius:30px;font-size:1.1rem;">
+                                <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
